@@ -53,13 +53,6 @@ public void setId(int cId) {
 	this.id = cId;
 }
 
-public String getName() {
-	return name;
-}
-
-public void setName(String cName) {
-	this.name = cName;
-}
 
 public String getCity() {
 	return city;
@@ -67,6 +60,13 @@ public String getCity() {
 
 public void setCity(String cCity) {
 	this.city = cCity;
+}
+public String getName() {
+	return name;
+}
+
+public void setName(String cName) {
+	this.name = cName;
 }
 
 public String getAdress() {
@@ -156,5 +156,7 @@ public String getParking() {
 public void setParking(String cParking) {
 	this.parking = cParking;
 }
+
+
 
 }

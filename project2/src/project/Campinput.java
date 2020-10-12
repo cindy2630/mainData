@@ -13,8 +13,10 @@ public class Campinput {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/xepdb1", "hr",
-				"hr");) {
+//		try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/xepdb1", "hr",
+//				"hr");) {
+			try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.39.83:1521/XEPDB1", "project2",
+					"project2");){
 			PreparedStatement pstmt = null;
 			File file = new File("C:\\Users\\Student\\Desktop\\project2\\campinf.csv");
 			InputStreamReader ips = new InputStreamReader(new FileInputStream(file), "BIG5");

@@ -6,8 +6,12 @@ import java.sql.*;
 public class CreatTable {
 
 	public static void main(String[] args) {
-		try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/xepdb1", "hr",
-				"hr");) {
+//		try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@//localhost:1521/xepdb1", "hr",
+//				"hr");)
+		try (Connection conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.39.83:1521/XEPDB1", "project2",
+				"project2");)
+		
+		{
 			Statement stmt = conn.createStatement();
 			
 			String sql = "  CREATE TABLE CAMPINF" + 

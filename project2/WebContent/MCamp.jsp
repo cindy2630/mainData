@@ -23,7 +23,7 @@ response.setDateHeader ("Expires", -1); // Prevents caching at the proxy server
     <td><INPUT TYPE="TEXT" NAME="city" ></td>
 </tr>
 </table>
-<input type="submit" name="submitshow" value="送出">
+<input type="submit" name="submitfind" value="送出">
 </form>
 </center>
 </body>
