@@ -13,38 +13,39 @@ response.setDateHeader("Expires", -1); // Prevents caching at the proxy server
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>露營地查詢</title>
 <script type="text/javascript">
-<script type="text/javascript">
 function setFocus()
 {
-     document.getElementById("title").focus();
+     document.getElementById("id").focus();
 }
 
-function confirmDelete() {
-	if (confirm("確定刪除此項露營地資料?") ) {
-		document.forms[0].action="CampServlet?id=${CampBean.id}" ;
+
+function confirmDelete(n) {
+	if (confirm("確定刪除此項露營地資料? ") ) {
+		document.forms[0].action="CampServlet?cmd=DEL&id="+n;
 		document.forms[0].method="POST";
 		document.forms[0].submit();
 	} else {
+	
 	}
 }
 
-function updateCamp() {
-    document.forms[0].action="BookUpdate.do?id=${CampBean.id}" ;
+function confirmupdate(a) {
+    document.forms[0].action="CampServlet?cmd=Update&id="+a;
 	document.forms[0].method="POST";
 	document.forms[0].submit();
 }
 
+
 </script>
 </head>
-<body>
+<body onload="setFocus()">
 	<jsp:useBean id="dao" class="project.CampBean" scope="session" />
 	<form action=".\CampServlet" method="post">
-<center>${CampDeleteMsg}<br>
-<c:remove var="CampDeleteMsg" />
+<center>
 	<h2>露營地資訊</h2>
+	<a href=".\CampAdd.jsp"><input type="button" name="add" value="新增" ></a>
 			<table cellspacing="2" cellpadding="1" border="1">
 				<tr>
-					<td></td>
 					<td>編號</td>
 					<td>城市</td>
 					<td>露營地</td>
@@ -60,33 +61,29 @@ function updateCamp() {
 					<td>附屬服務</td>
 					<td>停車方式</td>
 					<td></td>
-					<td></td>
 				</tr>
 				<c:forEach items="${list2}" var="acamp" varStatus="status">
 					<tr>
-					<td><input type="checkbox" /></td>
-						<td>${acamp.id}</td>
-						<td>${acamp.city}</td>
-						<td>${acamp.name}</td>
-						<td>${acamp.adress}</td>
-						<td>${acamp.tel}</td>
-						<td>${acamp.oprice}</td>
-						<td>${acamp.wprice}</td>
-						<td>${acamp.tentnum}</td>
-						<td>${acamp.elevation}</td>
-						<td>${acamp.feature}</td>
-						<td>${acamp.facility}</td>
-						<td>${acamp.pet}</td>
-						<td>${acamp.service}</td>
-						<td>${acamp.parking}</td>        
-					<input name="id" type="hidden" id="id" value="${param.id}>" />
-				<td><input type="button" name="confirmdelet" value="刪除"  onclick="confirmDelete()">
-				<td><input type="button" name="submitupdate" value="修改" onclick="updateCamp()">
+<!-- 					<form action="./CampServlet" method="post"> -->
+						<td>${acamp.id}<c:set var="id" value='${acamp.id}' /></td>
+						<td>${acamp.city}<c:set var="city" value='${acamp.city}' /></td>
+						<td>${acamp.name}<c:set var="name" value='${acamp.name}' /></td>
+						<td>${acamp.adress}<c:set var="adress" value='${acamp.adress}' /></td>
+						<td>${acamp.tel}<c:set var="tel" value='${acamp.tel}' /></td>
+						<td>${acamp.oprice}<c:set var="oprice" value='${acamp.oprice}' /></td>
+						<td>${acamp.wprice}<c:set var="wprice" value='${acamp.wprice}' /></td>
+						<td>${acamp.tentnum}<c:set var="tentnum" value='${acamp.tentnum}' /></td>
+						<td>${acamp.elevation}<c:set var="elevation" value='${acamp.elevation}' /></td>
+						<td>${acamp.feature}<c:set var="feature" value='${acamp.feature}' /></td>
+						<td>${acamp.facility}<c:set var="facility" value='${acamp.facility}' /></td>
+						<td>${acamp.pet}<c:set var="pet" value='${acamp.pet}' /></td>
+						<td>${acamp.service}<c:set var="service" value='${acamp.service}' /></td>
+						<td>${acamp.parking}<c:set var="parking" value='${acamp.parking}' /></td>  
+						<td><input type="button" name="delete" value="刪除" onclick="confirmDelete(${acamp.id})"></td>
+			            <td><input type="button" name="update" value="修改" onclick="confirmupdate(${acamp.id})"></td>
 					</tr>
 				</c:forEach>
 			</table>
-			<input type="submit" name="confirmshow" value="送出">
-			
 		</center>
 	</form>
 </body>

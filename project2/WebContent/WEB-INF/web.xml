@@ -17,12 +17,12 @@
   </resource-ref>
     <servlet>
     <description></description>
-    <display-name>CampInsert</display-name>
-    <servlet-name>CampInsert</servlet-name>
-    <servlet-class>CampInsert</servlet-class>
+    <display-name>CampServlet</display-name>
+    <servlet-name>CampServlet</servlet-name>
+    <servlet-class>CampServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>CampInsert</servlet-name>
-    <url-pattern>/CampInsert</url-pattern>
+    <servlet-name>CampServlet</servlet-name>
+    <url-pattern>/CampServlet</url-pattern>
   </servlet-mapping>
 </web-app>

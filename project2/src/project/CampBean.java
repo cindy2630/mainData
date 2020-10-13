@@ -18,10 +18,8 @@ public class CampBean {
 	String service;
 	String parking;
 	
-	
-
-	
 	public CampBean() {
+		
 	}
 
 

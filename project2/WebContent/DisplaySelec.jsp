@@ -56,6 +56,7 @@ response.setDateHeader ("Expires", -1); // Prevents caching at the proxy server
                         </tr>
                     </c:forEach>
 </table>
+<input type="submit" name="confirmshow" value="確認">
 </center>
 </form>
 </body>
