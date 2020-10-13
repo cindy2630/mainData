@@ -11,6 +11,7 @@ response.setContentType("text/html;charset=UTF-8");
 <title>更新成功</title>
 </head>
 <body>
-完成更新
+<h2>完成更新</h2>
+<a href=".\MCamp.jsp"><input type="button" name="select" value="查詢" ></a>
 </body>
 </html>

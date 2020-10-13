@@ -266,11 +266,9 @@ public class CampServlet extends HttpServlet {
 			
 			List<CampBean> list1 = dao.getcampsById(id);
 			
-			System.out.println(list1+"sss");
 		
 			request.getSession(true).setAttribute("list1", list1);
 			
-			System.out.println(list1.get(0).getId());
 			
 			request.getRequestDispatcher("/CampUpdate.jsp").forward(request, response);
 			

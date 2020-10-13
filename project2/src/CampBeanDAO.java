@@ -119,12 +119,6 @@ public class CampBeanDAO {
 		    try {
 		    	String sqlString = "DELETE FROM campinf " +
 		    			"WHERE id ="+id;
-//		    	System.out.println(conn);
-//		      String sql= "DELETE from campinf WHERE id = ?";
-//		      PreparedStatement stmt = conn.prepareStatement(sql);
-//                stmt.setInt(1, id);
-//				 int deletecount = stmt.executeUpdate(sql);
-//		    	System.out.println(sqlString);
 		    	Statement stmt = conn.prepareStatement(sqlString);
 	           int deletecount = stmt.executeUpdate(sqlString);
 				  stmt.close();
