@@ -159,7 +159,6 @@ public class CampBeanDAO {
 			    stmt.setString(11, campData.getPet());
 			    stmt.setString(12, campData.getService());
 			    stmt.setString(13, campData.getParking());
-			    System.out.println(sqlString);
 			    int updatecount = stmt.executeUpdate();
 			    
 		      stmt.close();
